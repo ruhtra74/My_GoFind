@@ -1,3 +1,10 @@
+actionOffre = document.querySelectorAll('.offer-buttons .actionOffre');
+actionOffre.forEach(item => {
+    item.addEventListener('click', function () {
+        document.getElementById("ombre").style = "display: block";
+    });
+});
+
 function modifierOffreColoc(id){
     //Lorsqu'on clique sur le bouton modifier, on recupere d'abord l'index de l'offre choisi dans le tableau offresColoc
     index = getIndexById(offresColoc, Number(id));
@@ -107,3 +114,4 @@ function supprimerOffreCovoi(id) {
     //On affiche ce dernier
     document.getElementById("formSupprOffreCovoi").style = "display: flex";
 }
+

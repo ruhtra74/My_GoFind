@@ -327,7 +327,7 @@
                 </section>
                 <aside class="info-section">
                     <div class="icon">ℹ️</div>
-                    <p>Remplissez le formulaire ci-contre avec les informations concernant votre logement et elles seront visibles par tous nos utilsateurs</p>
+                    <p>Remplissez le formulaire ci-contre avec les informations concernant votre logement et elle sera mise à jour</p>
                 </aside>
             </div>
             <!-- Formulaire pour les modifications des offres de co-voiturage -->

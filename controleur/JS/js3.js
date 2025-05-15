@@ -24,15 +24,6 @@ annulerButtons.forEach(btn => {
 });
 
 
-
-boutonMenu = document.querySelectorAll('.offer-buttons actionOffre');
-boutonMenu.forEach(item => {
-    item.addEventListener('click', function () {
-        masquerTout();
-        document.getElementById("ombre").style = "display: block";
-    });
-});
-
 document.getElementById("monCompteButton").addEventListener("click", function(){        //Lorsqu'on clique sur le bouton Mon compte, 
     document.getElementById("volet-mon-compte").style = "display: block";               //On affiche le formulaire
     document.getElementById("titreMonCompte").setAttribute("class", "active");
@@ -145,15 +136,6 @@ document.getElementById("annulerProposerCoVoi").addEventListener("click", functi
 });
 
 
-document.getElementById("repondreOffre").addEventListener("click", function () {
-    document.getElementById("volet-repondre-offre").style = "display: flex";
-    document.getElementById("titreRepondreOffre").setAttribute("class", "active");
-    
-});
-document.getElementById("volet-repondre-offre-cacher").addEventListener("click", function () {
-    document.getElementById("volet-repondre-offre").style = "display: none";
-    document.getElementById("ombre").click();
-});
 
 document.getElementById("ombre").addEventListener("click", function () {
     document.getElementById("ombre").style = "display: none;"

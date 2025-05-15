@@ -896,7 +896,7 @@ affichage des offres
         } else {
             $this->afficherSurPage("<h2>Offres De Co-Location</h2>");
             foreach ($offres as $offre) {
-                $this->afficherOffreColoc($offre['photoLogement'], $offre['adresseLogement'], $offre['typeLogement'], $offre['nbrePieces'], "tous", $offre['idOffre']);
+                $this->afficherOffreColoc($offre['photoLogement'], $offre['adresseLogement'], $offre['typeLogement'], $offre['nbrePieces'], "tous", $offre['idOffre'], $offre['dateAjout']);
             }
         }
         echo "</div>";
@@ -910,7 +910,7 @@ affichage des offres
         } else {
             echo "<h2>Offres De Co-Voiturage</h2>";
             foreach ($offres as $offre) {
-                $this->afficherOffreCovoi($offre['photoVoiture'], $offre['depart'], $offre['destination'], $offre['dateDepart'], $offre['marqueVoiture'], $offre['modeleVoiture'], "tous", $offre['idOffre']);
+                $this->afficherOffreCovoi($offre['photoVoiture'], $offre['depart'], $offre['destination'], $offre['dateDepart'], $offre['marqueVoiture'], $offre['modeleVoiture'], "tous", $offre['idOffre'], $offre['dateAjout']);
             }
         }
         echo "</div>";
@@ -935,7 +935,7 @@ affichage des offres
             //Et on les affiche un a un
             $this->afficherSurPage("<h2>Offres De Co-Location</h2>");
             foreach ($offres as $offre) {
-                $this->afficherOffreColoc($offre['photoLogement'], $offre['adresseLogement'], $offre['typeLogement'], $offre['nbrePieces'], "mesOffres", $offre['idOffre']);
+                $this->afficherOffreColoc($offre['photoLogement'], $offre['adresseLogement'], $offre['typeLogement'], $offre['nbrePieces'], "mesOffres", $offre['idOffre'], $offre['dateAjout']);
             }
         }
         echo "</div>";
@@ -955,7 +955,7 @@ affichage des offres
             //Et on les affiche un a un
             $this->afficherSurPage("<h2>Offres De Co-Voiturage</h2>");
             foreach ($offres as $offre) {
-                $this->afficherOffreCovoi($offre['photoVoiture'], $offre['depart'], $offre['destination'], $offre['dateDepart'], $offre['marqueVoiture'], $offre['modeleVoiture'], "mesOffres", $offre['idOffre']);
+                $this->afficherOffreCovoi($offre['photoVoiture'], $offre['depart'], $offre['destination'], $offre['dateDepart'], $offre['marqueVoiture'], $offre['modeleVoiture'], "mesOffres", $offre['idOffre'], $offre['dateAjout']);
             }
         }
         echo "</div>";
@@ -1200,7 +1200,7 @@ supprimer un offre
         if ($resultat) {
             $message = "Votre offre a été supprimée. 👍";
             $this->afficherAlert($message);	
-            $this->redirection("../pageAccueil.php?voirMesOffres=1");
+            $this->redirection("../vue/pageAccueil.php?voirMesOffres=1");
         }
     }
     //Pour les offres de co-location
@@ -1210,7 +1210,7 @@ supprimer un offre
         if ($resultat) {
             $message = "Votre offre a été supprimée. 👍";
             $this->afficherAlert($message);
-            $this->redirection("../pageAccueil.php?voirMesOffres=1");
+            $this->redirection("../vue/pageAccueil.php?voirMesOffres=1");
         }
     }
 
@@ -1274,7 +1274,7 @@ supprimer un offre
 
 
     //On recupere et on formate les informations sur l'offre avant de l'afficher
-    private function afficherOffreCovoi($photoVoiture, $depart, $destination, $dateDepart, $marqueVoiture, $modeleVoiture, $quel, $id){
+    private function afficherOffreCovoi($photoVoiture, $depart, $destination, $dateDepart, $marqueVoiture, $modeleVoiture, $quel, $id, $date){
         $message = "
             <div class='offer-card'>
                 <div class='offer-info'>
@@ -1282,9 +1282,10 @@ supprimer un offre
                         <img src='" .htmlspecialchars($photoVoiture) . "' alt='Image de l offre' />
                     </div>
                     <div class='offer-details'>
-                        <strong> " . htmlspecialchars($depart) . " - " . htmlspecialchars($destination) . "</strong><br>
+                        <strong> " . htmlspecialchars($depart) . " - " . htmlspecialchars($destination) . "</strong><br />
                         <small>" . htmlspecialchars($dateDepart) . "</small><br>
-                        <small>" . htmlspecialchars($marqueVoiture) . " " . htmlspecialchars($modeleVoiture) . "</small>
+                        <small>" . htmlspecialchars($marqueVoiture) . " " . htmlspecialchars($modeleVoiture) . "</small><br />
+                        <small>" . htmlspecialchars(substr($date, 0, 10)) . "</small>
                     </div>
                 </div>
         ";
@@ -1309,7 +1310,7 @@ supprimer un offre
         }
         $this->afficherSurPage($message);
     }
-    private function afficherOffreColoc($photoLogement, $adresseLogement, $typeLogement, $nbrePieces, $quel, $id){
+    private function afficherOffreColoc($photoLogement, $adresseLogement, $typeLogement, $nbrePieces, $quel, $id, $date){
         $message = "
             <div class='offer-card'>
                 <div class='offer-info'>
@@ -1319,7 +1320,8 @@ supprimer un offre
                     <div class='offer-details'>
                         " . htmlspecialchars($adresseLogement) . "<br>
                         <strong>" . htmlspecialchars($typeLogement) . "</strong><br>
-                        <small>" . htmlspecialchars($nbrePieces) . " Pièces</small>
+                        <small>" . htmlspecialchars($nbrePieces) . " Pièces</small> <br />
+                        <small>" . htmlspecialchars(substr($date, 0, 10)) . "</small>
                     </div>
                 </div>
             ";

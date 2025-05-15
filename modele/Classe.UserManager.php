@@ -30,6 +30,10 @@
         }
 
         public function supprimerCompte($db){
+            $requete = $db->prepare("DELETE FROM offrecolocation WHERE idAnnonceur = ?");
+            $requete->execute([$_SESSION["idUtilisateur"]]);
+            $requete = $db->prepare("DELETE FROM offrecovoiturage WHERE idAnnonceur = ?");
+            $requete->execute([$_SESSION["idUtilisateur"]]);
             $requete = $db->prepare("DELETE FROM utilisateur WHERE idUtilisateur = ?");
             $requete->execute([$_SESSION["idUtilisateur"]]);
 

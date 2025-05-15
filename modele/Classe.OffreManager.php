@@ -26,7 +26,7 @@
 
         public function afficherOffresColoc($bd){
             try{
-                $requete = $bd->prepare("SELECT * FROM offrecolocation WHERE statut=?");
+                $requete = $bd->prepare("SELECT * FROM offrecolocation WHERE statut=? ORDER BY dateAjout DESC");
                 $requete->execute(["disponible"]);
                 $resultatReq = $requete->fetchAll(PDO::FETCH_ASSOC);
                 return $resultatReq;
@@ -39,7 +39,7 @@
 
         public function afficherOffresCovoi($bd){
             try{
-                $requete = $bd->prepare("SELECT * FROM offrecovoiturage WHERE statut=?");
+                $requete = $bd->prepare("SELECT * FROM offrecovoiturage WHERE statut=? ORDER BY dateAjout DESC");
                 $requete->execute(["disponible"]);
                 $resultatReq = $requete->fetchAll(PDO::FETCH_ASSOC);
                 return $resultatReq;

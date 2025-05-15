@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("chargeurClasses.php");
+    include("../modele/chargeurClasses.php");
 
     /*                                                            */
     /*  Script qui gere le processus d'enregistrement des offres. */

@@ -1,0 +1,114 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* liens */
+a {
+    all: unset;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+.background {
+    background: radial-gradient(circle at center, #00ffcb, #007b7f, #003f4c);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    height: 70px;
+}
+
+.slogan {
+    font-size: 1.5rem;
+    color: #00ffcb;
+}
+
+/* Form Container */
+.form-container {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+}
+
+.form-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Form */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: #e0e0e0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.form-group input::placeholder {
+    color: #666;
+}
+
+.form-group {
+    margin: 10px;
+}
+
+/* Button */
+.submit-btn {
+    border: none;
+    border-radius: 25px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 150px;
+    height: 50px;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+}
+/* forget password */
+p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

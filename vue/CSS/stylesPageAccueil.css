@@ -1,0 +1,262 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #f1f8f6;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #c2eee6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.monCompteButton{
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplit le conteneur sans déformation */
+    object-position: center; /* Centre l'image dans le conteneur */
+    display: block; /* Supprime l'espace sous l'image */
+}
+
+
+
+
+
+.ombre{
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 220px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+.volet-mon-compte{
+  padding: 20px;
+  background-color: white;
+  position: fixed;
+  width: fit-content;
+  height: 100%;
+  left: 220px;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 20px;
+}
+
+.mon-compte-option{
+  margin-top: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mon-compte-name{
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* proposer offre */
+.volet-proposer-offre, .volet-repondre-offre{
+  padding: 20px;
+  background-color: white;
+  position: fixed;
+  width: fit-content;
+  height: 20%;
+  left: 220px;
+  top: 40%;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 20px;
+}
+
+.volet-mon-compte-cacher, .mon-compte-option span, .volet-proposer-offre-cacher, .volet-repondre-offre-cacher{
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.proposer-offre-option, .repondre-offre-option{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 15px;
+}
+
+.menu,
+.bottom-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu span, .volet-mon-compte span, .volet-proposer-offre span, .volet-repondre-offre span,
+.bottom-menu a, .menu a{
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.menu span:hover, .monCompteButton:hover, 
+.bottom-menu a:hover, .menu a:hover {
+  background-color: #a8dadc;
+}
+
+.active {
+  background-color: #2c6e49;
+  color: white !important;
+  cursor: default !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.main-content h1 {
+  font-size: 2rem;
+  color: #2c6e49;
+  margin-bottom: 30px;
+}
+
+.offers {
+  display: flex;
+  gap: 50px;
+}
+
+.offers-section {
+  flex: 1;
+}
+
+.offers-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+/* Offer Cards */
+.offer-card {
+  background-color: white;
+  border: 1px solid #a8dadc;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.offer-card:hover{
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.offer-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.offer-img img{
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.offer-details {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.offer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.offer-buttons button {
+  padding: 8px 12px;
+  border: 2px solid #2c6e49;
+  background-color: white;
+  color: #2c6e49;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.offer-buttons button:hover {
+  background-color: #2c6e49;
+  color: white;
+}
+
+a{
+  all: unset;
+}

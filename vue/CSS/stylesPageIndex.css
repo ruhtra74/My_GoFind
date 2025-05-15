@@ -1,0 +1,90 @@
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+.background {
+    background: radial-gradient(circle at center, #00ffcb, #007b7f, #003f4c);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    height: 70px;
+}
+
+.slogan {
+    font-size: 1.5rem;
+    color: #00ffcb;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 700px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: black;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    border: 2px solid white;
+    color: white;
+    width: 30%;
+}
+
+.btn:hover {
+    color: #003f4c;
+    background-color: white;
+}
+
+.account-text {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
